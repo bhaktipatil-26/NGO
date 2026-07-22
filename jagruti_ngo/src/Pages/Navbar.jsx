@@ -1,48 +1,86 @@
-import React from 'react'
-import "../assets/CSS/Navbar.css";
-import ngo_logo from "../assets/Images/ngo_logo.jpeg";
-
-import { FaHeart } from "react-icons/fa";
+import React from "react";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { FaGlobe } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa6";
 
-const Navbar = () =>{
+import "../assets/CSS/Navbar.css";
+import logo from "../assets/Images/ngo_logo.jpeg";
+
+function CustomNavbar() {
   return (
-    <>
-    <header className="navbar">
-      {/* Logo */}
-      <div className="logo-container">
-        <img src={ngo_logo} alt="Logo" className="logo" />
-        <div className="logo-text">
-          <h3>Jagruti Foundation</h3>
-          <p>Empowering lives through skill, care and compassion.</p>
-        </div>
-      </div>
+    <Navbar expand="lg" className="custom-navbar">
+      <Container fluid>
 
-      {/* Navigation */}
-      <nav>
-        <ul className="nav-links">
-          <li className="active">Home</li>
-          <li>About Us</li>
-          <li>Programs</li>
-          <li>Blog & News</li>
-          <li>Gallery</li>
-          <li>Contact Us</li>
-        </ul>
-      </nav>
+        {/* Logo + Title */}
 
-      {/* Right Side */}
-      <div className="right-side">
-        <button className="donate-btn">
-          <FaHeart />
-          Donate
-        </button>
-        <div className="globe">
-          <FaGlobe />
+        <Navbar.Brand className="brand-section ">
+
+          <img
+            src={logo}
+            alt="Jagruti Foundation"
+            className="brand-logo"
+          />
+
+          <div className="brand-text d-none d-sm-block">
+
+            <h5>Jagruti Foundation</h5>
+
+            <p>
+              Empowering lives through skill,
+              care and compassion.
+            </p>
+
+          </div>
+
+        </Navbar.Brand>
+        {/* Mobile */}
+        <div className="d-lg-none">
+          <div className="right-control">
+
+          <div className="right-section">
+
+            <Button className="donate-btn">
+              <FaRegHeart className="heart-icon" />
+              Donate
+            </Button>
+
+            {/* <FaGlobe className="globe-icon" /> */}
+
+          </div>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
-      </div>
-    </header>
-    </>
+        </div>
+        <Navbar.Collapse id="basic-navbar-nav">
+
+          <Nav className="mx-auto nav-links">
+
+            <Nav.Link href="#" >Home</Nav.Link>
+            <Nav.Link href="#" className="active-tab" >
+              About Us
+            </Nav.Link>
+            <Nav.Link href="#" >Programs</Nav.Link>
+            <Nav.Link href="#"  >Blog & News</Nav.Link>
+            <Nav.Link href="#" >Gallery</Nav.Link>
+            <Nav.Link href="#" >Contact Us</Nav.Link>
+          </Nav>
+
+
+        </Navbar.Collapse>
+        <div className="d-none d-lg-flex">
+          <div className="right-section">
+
+            <Button className="donate-btn">
+              <FaRegHeart className="heart-icon" />
+              Donate
+            </Button>
+
+            <FaGlobe className="globe-icon" />
+
+          </div>
+          </div>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default CustomNavbar;
