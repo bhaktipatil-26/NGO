@@ -9,7 +9,7 @@ import program4 from "../assets/Images/program4.jpeg";
 import { PiBookBookmarkFill } from "react-icons/pi";
 import { RiWomenFill } from "react-icons/ri";
 import { BsLeafFill } from "react-icons/bs";
-import { MdHealthAndSafety } from "react-icons/md";
+import { MdGradient, MdHealthAndSafety } from "react-icons/md";
 import{FaUsers, FaHandHoldingHeart, FaBullseye} from "react-icons/fa";
 import {FaCalendarAlt, FaFemale, FaGraduationCap} from "react-icons/fa";
 import { Container, Card, Button } from "react-bootstrap";
@@ -65,13 +65,13 @@ const Home = () => {
   return (
     <>
     {/* HERO SECTION */}
-    <section
+    <section data-aos="fade-up"
   style={{
     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${hero})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    minHeight: "100vh",
+    height: "97vh",
     position: "relative",
     marginTop: "-120px",   // pull hero behind navbar
     paddingTop: "120px",   // keep content below navbar
@@ -101,7 +101,7 @@ const Home = () => {
           </p>
 
           <div className="d-flex flex-wrap gap-5 mt-5">
-            <button className="btn" style={{ backgroundColor: "#D62828", color: "white", padding: "14px 28px", borderRadius: "8px", fontWeight: "600" }} >
+            <button className="discover-btn" style={{ backgroundColor: "#D62828", color: "white", padding: "14px 28px", borderRadius: "8px", fontWeight: "600" }} >
               Discover Our Programs →
             </button>
 
@@ -117,7 +117,7 @@ const Home = () => {
 
 {/* ABOUT SECTION */}
 
-<section>
+<section data-aos="fade-up">
   <div className="container-fluid" style={{paddingLeft: "150px", paddingRight: "150px"}}>
 
     <div className="row align-items-center gy-5 gx-5">
@@ -149,7 +149,6 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <hr />
 
         {/* What We Do */}
         <div className="about-card d-flex align-items-start my-4">
@@ -170,7 +169,6 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <hr />
 
         {/* Why We Do It */}
         <div className="about-card d-flex align-items-start mt-4">
@@ -197,7 +195,7 @@ const Home = () => {
 
 {/* PROGRAM SECTION */}
 
-<section className="py-3">
+<section className="py-1" data-aos="fade-up">
   <div className="container-fluid">
     <h2 className="text-center fw-bold" style={{color: "#16255F", fontSize: "clamp(2.2rem,5vw,3.5rem)"}}>
       Programs
@@ -301,9 +299,9 @@ const Home = () => {
 </section>
 
 {/* IMPACT SECTION */}
-    <section className="py-5">
+    <section className="py-5" data-aos="fade-up">
   <div className="container-fluid" style={{paddingLeft: "150px", paddingRight: "150px"}}>
-    <h2 className="text-center fw-bold" style={{ color: "#16255F" }}> Our Impact</h2>
+    <h2 className="text-center fw-bold" style={{ color: "#16255F", fontSize: "clamp(2.2rem,5vw,3.5rem)" }}> Our Impact</h2>
     <div className="mx-auto mb-5"style={{width: "90px", height: "5px", background: "#D62828", borderRadius: "20px", marginTop: "20px"}}></div>
     <div className="row text-center">
 
@@ -348,27 +346,27 @@ const Home = () => {
       </div>
 
     </div>
-
-    <div className="row">
-    <div className="col-12 text-center">
-      <img
-        src={childrenImage}
-        alt="Children"
-        className="img-fluid"
-      />
-    </div>
   </div>
-
-
+  <div className="row">
+  <div className="col-12 pt-5 pb-0 ps-5 pe-5">
+    <img
+      src={childrenImage}
+      alt="Children"
+      className="img-fluid w-100"
+      style={{ height: "100%", display: "block" }}
+    />
   </div>
+</div>
 </section>
 
 {/* LATEST UPDATES */}
-<section
+<section data-aos="fade-up"
       style={{
-        padding: "5% 0",
-        backgroundColor: "#F7F8FC",
+        padding: "0 0 5% 0",
+        background: "linear-gradient(to bottom, #FFFFFF 0%, #f2f5ff 100%)",
         overflow: "hidden",
+        boxShadow: "none",
+    marginTop: 0,
       }}
     >
       <Container>
@@ -380,7 +378,7 @@ const Home = () => {
             marginBottom: "4%",
           }}
         >
-          <h2
+          <h2 
             style={{
               fontSize: "clamp(2rem, 4vw, 3rem)",
               fontWeight: "700",
@@ -452,12 +450,12 @@ const Home = () => {
                     backgroundColor: "#FFFFFF",
 
                     boxShadow: isActive
-                      ? "0 20px 45px rgba(11, 44, 107, 0.20)"
-                      : "0 8px 25px rgba(0, 0, 0, 0.08)",
+                       ? "0 4px 12px rgba(0,0,0,0.08)"
+  : "none",
 
                     transform: isActive
-                      ? "scale(1.05)"
-                      : "scale(0.90)",
+                      ? "scale(1.02)"
+                      : "scale(0.95)",
 
                     filter: isActive
                       ? "blur(0)"
