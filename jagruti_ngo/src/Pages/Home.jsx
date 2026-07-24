@@ -87,7 +87,7 @@ const Home = () => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    height: "97vh",
+    height: "100vh",
     position: "relative",
     marginTop: "-120px",   // pull hero behind navbar
     paddingTop: "120px",   // keep content below navbar
