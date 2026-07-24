@@ -118,3 +118,11 @@
     transform: translateY(-8px);
 }
 
+@media(max-width: 375px){
+    .hero-section{
+       max-width: 100%;
+    }
+    .hero-left{
+        padding-left: 10px;
+    }
+}
