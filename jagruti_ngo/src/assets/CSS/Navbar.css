@@ -4,25 +4,45 @@
 /* ======================= */
 /* NAVBAR */
 /* ======================= */
-.custom-navbar{
+.navbar.custom-navbar{
     position: absolute;
-    top: 30px;
+    z-index: 1000;
+    top: 5px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%);
+    width:1600px;
+    /* height:90px; */
+    padding:12px 14px;
+    border-radius:17px;
+    background:#FFFFFF;
+    margin:25px auto 0;
+    box-shadow:0px 8px 20px rgba(0,0,0,.08);
+}
+.navbar-collapse{
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 0 0 20px 20px;
+}
+.nav-links .nav-link::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
 
-    width: 95%;
-    max-width: 1620px;
-    min-height: 90px;
+    width: 50%;
+    height: 3px;
 
-    padding: 12px 14px;
-    border-radius: 17px;
-    background: #FFFFFF;
+    background: #D61114;
+    border-radius: 50px;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-
-    z-index: 9999;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
 }
 
+.nav-links .nav-link:hover::after{
+    transform: translateX(-50%) scaleX(1);
+}
 /* ======================= */
 /* BRAND */
 /* ======================= */
@@ -143,6 +163,16 @@ button.donate-btn{
 @media (min-width:320px) and (max-width:426px)
 {
     /* for  with underline but no seperator and also with no underline but seperator*/
+    .navbar.custom-navbar{
+    position: absolute;
+    z-index: 1000;
+    top: 0px;
+    left: 0%;
+    transform: translate(0%);
+    width:100%;
+    height:90px;
+    margin-top: 0px;
+}
     .nav-links
     {
         gap: 15px;
@@ -186,9 +216,38 @@ button.donate-btn{
         gap: 4px;
         padding: 10px;
     }
+.nav-links .nav-link::after{
+    left:0;
+    width: 35%;
+    transform:scaleX(0);
+    transform-origin:left;
 }
-@media (min-width:426px) and (max-width:992px)
+
+.nav-links .nav-link:hover::after{
+    transform:scaleX(1);
+}
+}
+@media (min-width:426px) and (max-width:1200px)
 {
+.nav-links .nav-link::after{
+    left:0;
+    width: 15%;
+    transform:scaleX(0);
+    transform-origin:left;
+}
+
+.nav-links .nav-link:hover::after{
+    transform:scaleX(1);
+}
+    .navbar.custom-navbar
+    {
+        position:relative;
+        top:0;
+        left:0;
+        transform:translate(0);
+        width:100%;
+        margin-top: 0px;
+    }
     .nav-links
     {
         gap: 15px;
@@ -203,7 +262,7 @@ button.donate-btn{
     }
     .custom-navbar
     {
-        margin-top: 10px;
+        margin-top: 0px;
         width: 95%;
     }
     .right-control

@@ -21,6 +21,7 @@
 
 import Navbar from "./Pages/Navbar";
 import Home from "./Pages/Home";
+import Footer from "./Pages/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -41,6 +42,7 @@ function App() {
     <>
       <Navbar />
       <Home/>
+      <Footer/>
     </>
   );
 }
