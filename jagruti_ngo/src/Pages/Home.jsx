@@ -86,7 +86,7 @@ const Home = () => {
       <div className="row align-items-center">
         {/* Left Content */}
         <div className=" hero-content col-lg-6 col-md-8" style={{ paddingLeft: "150px", paddingRight:"20px"}}>
-          <h1 className="fw-bold" style={{fontSize: "clamp(3rem,6vw,5rem)", lineHeight: "1.3", color: "#fff" }}>
+          <h1 className="fw-bold hero-title" style={{fontSize: "clamp(3rem,6vw,5rem)", lineHeight: "1.3", color: "#fff" }}>
             Empowering Lives
             <br />
             Through Skill,
@@ -95,14 +95,14 @@ const Home = () => {
             <span style={{ color: "#D62828" }}> Compassion</span>
           </h1>
 
-          <p className="mt-4" style={{ fontSize: "1.1rem", lineHeight: "1.9", color: "#f1f1f1" }}>
+          <p className="mt-4 hero-text" style={{ fontSize: "1.1rem", lineHeight: "1.9", color: "#f1f1f1" }}>
             Jagruti Foundation in Nashik is one of the leading NGOs,
             working towards education, empowerment and social welfare.
             We believe every individual deserves an opportunity to
             learn, grow and build a brighter future.
           </p>
 
-          <div className="d-flex flex-wrap gap-5 mt-5">
+          <div className="hero-buttons d-flex flex-wrap gap-5 mt-5">
             <button className="discover-btn" style={{ backgroundColor: "#D62828", color: "white", padding: "14px 28px", borderRadius: "8px", fontWeight: "600" }} >
               Discover Our Programs →
             </button>
@@ -120,18 +120,18 @@ const Home = () => {
 {/* ABOUT SECTION */}
 
 <section data-aos="fade-up">
-  <div className="container-fluid" style={{paddingLeft: "150px", paddingRight: "150px"}}>
+  <div className="container-fluid about-content" style={{paddingLeft: "150px", paddingRight: "150px"}}>
 
     <div className="row align-items-center gy-5 gx-5">
       {/* Left Image */}
-      <div className="col-lg-6 left-img">
-        <img src={about} alt="About" className="img-fluid rounded-4 shadow"
-          style={{width: "100%", height: "500px",objectFit: "cover"}}
+      <div className="col-lg-6 about-left-img">
+        <img src={about} alt="About" className="img-fluid rounded-4 shadow about-image"
+
         />
       </div>
 
       {/* Right Content */}
-      <div className="col-lg-6" style={{paddingLeft: "60px", paddingTop: "50px"}}>
+      <div className="col-lg-6 about-content" style={{paddingLeft: "60px", paddingTop: "50px"}}>
         {/* Who We Are */}
         <div className="about-card d-flex align-items-start mb-4">
           <div

@@ -1,3 +1,20 @@
+.hero-content{
+    padding-left:150px;
+    padding-right:20px;
+}
+
+.hero-title{
+    font-size:clamp(3rem,6vw,5rem);
+    line-height:1.3;
+    color:#fff;
+}
+
+.hero-text{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#f1f1f1;
+}
+
 .btn:hover{
     background: rgb(203, 26, 26) !important;
 }
@@ -7,11 +24,11 @@
     background: rgb(151, 4, 4) !important;
 }
 
-.left-img{
+.about-left-img{
     transition: transform 1s ease;
 }
 
-.left-img:hover img{
+.about-left-img:hover img{
     transform: scale(1.08);
 }
 
@@ -20,6 +37,8 @@
     border-radius: 16px;
     transition: all 0.35s ease;
 }
+
+
 
 .about-card:hover {
      transition: all 0.35s ease;
@@ -117,13 +136,4 @@
 
 .impact-card:hover{
     transform: translateY(-8px);
-}
-
-@media(max-width: 375px){
-    .hero-section{
-       max-width: 100%;
-    }
-    .hero-left{
-        padding-left: 10px;
-    }
 }
