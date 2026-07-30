@@ -1,6 +1,22 @@
+.hero-section{
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   padding-top: 120px;   
+   margin-top: -120px;  
+   height: 105vh;
+   z-index: 1;
+   
+}
+.hero-overlay{
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 180px;
+}
 .hero-content{
-    padding-left:150px;
-    padding-right:20px;
+    padding-left:150px !important;
+    padding-right:20px !important;
 }
 
 .hero-title{
@@ -8,38 +24,65 @@
     line-height:1.3;
     color:#fff;
 }
-
 .hero-text{
     font-size:1.1rem;
     line-height:1.9;
     color:#f1f1f1;
 }
-
-.btn:hover{
+.contact-btn{
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+.contact-btn:hover{
     background: rgb(203, 26, 26) !important;
 }
 
-
-.discover-btn:hover{
-    background: rgb(151, 4, 4) !important;
+.discover-btn{
+    background-color: #D62828;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
 }
 
+ .discover-btn:hover{
+    background: rgb(151, 4, 4) !important;
+}
+.about-content{
+   padding-left: 150px !important;
+   padding-right: 150px !important;
+}
 .about-left-img{
     transition: transform 1s ease;
 }
-
 .about-left-img:hover img{
     transform: scale(1.08);
 }
-
+.about-right{
+    padding-left: 60px;
+    padding-top: 50px;
+}
+.about-text{
+    line-height: 1.9;
+    font-size: 17px;
+}
+.right-icon{
+    width: 70px;
+    height: 70px;
+    background: #D6DCFF;
+    color: #16255F;
+    font-size: 30px;
+    flex-shrink: 0;
+}
 .about-card {
     padding: 20px;
     border-radius: 16px;
     transition: all 0.35s ease;
 }
-
-
-
 .about-card:hover {
      transition: all 0.35s ease;
     transform: translateY(-6px);
@@ -60,6 +103,27 @@
 
 .about-card:hover h2 {
     color: #D62828;
+}
+
+.heading{
+    color: #16255F;
+    font-size: clamp(2.2rem,5vw,3.5rem);
+}
+.heading-line{
+    width: 90px;
+    height: 5px;
+    background: #D62828;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.program-text{
+    max-width: 1000px;
+    line-height: 1.9;
+    font-size: 18px;
+}
+.program-row{
+    margin-left:100px !important;
+    margin-right:100px !important;
 }
 
 .program-card{
@@ -130,10 +194,360 @@
     background:#D62828;
     border:none;
 }
+
+.impact-section{
+    padding-left: 150px !important;
+    padding-right: 150px !important;
+}
 .impact-card{
     transition: 0.3s ease;
 }
 
 .impact-card:hover{
     transform: translateY(-8px);
+}
+.impact-icon{
+    width: 65px;
+    height: 65px;
+    background: #D6DCFF;
+    color: #16255F;
+    font-size: 28px;
+}
+.impact-image{
+    height: 100%;
+    display: block
+}
+
+/* ==========================================
+   LARGE DESKTOP (1200px - 1399px)
+========================================== */
+@media (max-width: 1200px) {
+
+  .hero-content{
+    padding-left:80px !important;
+    padding-right:40px !important;
+  }
+
+  .about-content,
+  .impact-section{
+    padding-left:80px !important;
+    padding-right:80px !important;
+  }
+
+}
+
+
+/* ==========================================
+   LAPTOP (992px - 1199px)
+========================================== */
+@media (max-width:992px){
+
+  .hero-section{
+    height:auto !important;
+    min-height:100vh;
+  }
+
+  .hero-overlay{
+    min-height:100vh;
+    padding-top:150px;
+    padding-bottom:70px;
+  }
+
+  .hero-content{
+    padding-left:50px !important;
+    padding-right:50px !important;
+  }
+
+  .hero-title{
+    font-size:3.5rem !important;
+  }
+
+  .hero-buttons{
+    gap:20px !important;
+  }
+
+  .about-content,
+  .impact-section{
+    padding-left:50px !important;
+    padding-right:50px !important;
+  }
+
+  .about-right{
+    padding-left:0 !important;
+    padding-top:40px !important;
+  }
+
+  .program-card{
+    height:420px;
+  }
+
+}
+
+
+/* ==========================================
+   TABLET (768px - 991px)
+========================================== */
+@media (max-width:768px){
+
+  .hero-section{
+    height:auto !important;
+  }
+
+  .hero-overlay{
+    padding-top:150px;
+    padding-bottom:70px;
+  }
+
+  .hero-content{
+    padding:0 35px !important;
+    text-align:center;
+  }
+
+  .hero-title{
+    font-size:2.8rem !important;
+  }
+
+  .hero-text{
+    font-size:1rem;
+  }
+
+  .hero-buttons{
+    justify-content:center;
+    gap:15px !important;
+  }
+
+  .about-content,
+  .impact-section{
+    padding-left:35px !important;
+    padding-right:35px !important;
+  }
+
+  .about-left-img{
+    text-align:center;
+  }
+
+  .about-right{
+    padding-left:0 !important;
+    padding-top:30px !important;
+  }
+
+  .about-card{
+    padding:15px;
+  }
+
+  .right-icon{
+    width:60px;
+    height:60px;
+    font-size:24px;
+  }
+
+  .program-text{
+    padding:0 20px;
+    font-size:16px;
+  }
+
+  .program-card{
+    height:420px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE LARGE (576px - 767px)
+========================================== */
+@media (max-width:576px){
+
+  .hero-overlay{
+    padding-top:140px;
+    padding-bottom:50px;
+  }
+
+  .hero-content{
+    padding:0 20px !important;
+    text-align:center;
+  }
+
+  .hero-title{
+    font-size:2.3rem !important;
+    line-height:1.3;
+  }
+
+  .hero-text{
+    font-size:15px;
+    line-height:1.8;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+    gap:15px !important;
+    align-items:center;
+  }
+
+  .discover-btn,
+  .contact-btn{
+    width:220px;
+  }
+
+  .about-content,
+  .impact-section{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  .about-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .about-card .ms-4{
+    margin-left:0 !important;
+    margin-top:20px;
+  }
+
+  .right-icon{
+    margin:auto;
+  }
+
+  .program-card{
+    height:380px;
+  }
+
+  .program-overlay h3{
+    font-size:26px;
+  }
+
+  .impact-card{
+    margin-bottom:30px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE (425px)
+========================================== */
+@media (max-width:425px){
+
+  .hero-title{
+    font-size:2rem !important;
+  }
+
+  .hero-text{
+    font-size:14px;
+  }
+
+  .heading{
+    font-size:2rem;
+  }
+
+  .program-card{
+    height:340px;
+  }
+
+  .program-icon{
+    font-size:36px;
+  }
+
+  .circle-btn{
+    width:50px;
+    height:50px;
+    font-size:22px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE (375px)
+========================================== */
+@media (max-width:375px){
+
+  .hero-content{
+    padding:0 15px !important;
+  }
+
+  .hero-title{
+    font-size:1.8rem !important;
+  }
+
+  .hero-buttons button{
+    width:100%;
+  }
+
+
+  .program-card{
+    height: auto;
+    width: 100% !important;
+  }
+
+   .row.g-4{
+        margin-left:0 !important;
+        margin-right:0 !important;
+    }
+
+  .about-text{
+    font-size:15px;
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE (320px)
+========================================== */
+@media (max-width:320px){
+
+  .hero-title{
+    font-size:1.6rem !important;
+  }
+
+  .hero-text{
+    font-size:13px;
+  }
+
+  .discover-btn,
+  .contact-btn{
+    width:100%;
+    padding:12px;
+  }
+
+  .heading{
+    font-size:1.8rem;
+  }
+
+  .about-left-img img{
+    width:100% !important;
+    height:auto!important;
+    object-fit:cover;
+    border-radius:15px !important;
+}
+
+  .program-card{
+    height:300px;
+    width: 100% !important;
+  }
+
+   .row.g-4{
+        margin-left:0 !important;
+        margin-right:0 !important;
+    }
+
+  .program-overlay{
+    padding:18px;
+  }
+
+  .program-overlay h3{
+    font-size:22px;
+  }
+
+  .program-icon{
+    font-size:30px;
+  }
+
+  .impact-icon{
+    width:55px;
+    height:55px;
+    font-size:22px;
+  }
 }

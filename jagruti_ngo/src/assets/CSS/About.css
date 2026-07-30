@@ -1,1035 +1,1636 @@
-/*==================================================
-                GOOGLE FONT
-==================================================*/
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap");
 
-/*==================================================
-                ROOT VARIABLES
-==================================================*/
-:root{
 
-    --primary:#0B2C6B;
-    --secondary:#031436;
-    --accent:#E53935;
-    --accent-dark:#C62828;
+/* =========================================================
+   ROOT
+========================================================= */
 
-    --bg:#F7F8FC;
+:root {
+  --primary: #0b2c6b;
+  --secondary: #031436;
+  --accent: #e53935;
+  --accent-dark: #c62828;
+  --green: #198754;
 
-    --white:#fff;
-    --text:#555;
+  --bg: #f7f8fc;
+  --white: #ffffff;
+  --text: #555;
 
-    --radius-sm:15px;
-    --radius-md:22px;
-    --radius-lg:30px;
+  --shadow-sm: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 25px 60px rgba(0, 0, 0, 0.18);
 
-    --shadow-sm:0 10px 25px rgba(0,0,0,.08);
-    --shadow-md:0 18px 40px rgba(0,0,0,.12);
-    --shadow-lg:0 25px 60px rgba(0,0,0,.18);
-
-    --transition:.35s ease;
+  --transition: 0.3s ease;
 }
 
-/*==================================================
-                RESET
-==================================================*/
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
-body{
+body {
+  margin: 0;
+  padding: 0;
 
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    overflow-x:hidden;
+  overflow-x: hidden;
+
+  background: var(--bg);
+
+  color: #152451;
+
+  font-family: "Inter", Arial, sans-serif;
+
+  line-height: 1.6;
 }
 
-img{
-
-    width:100%;
-    display:block;
-    height:auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
 }
 
-a{
-
-    text-decoration:none;
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-button{
-
-    cursor:pointer;
+button {
+  cursor: pointer;
 }
 
-section{
+/* =========================================================
+   ABOUT HERO
+========================================================= */
 
-    padding:6rem 0;
+.about-hero {
+  position: relative;
+  width: 100%;
+
+  /*
+  IMPORTANT:
+  Hero height is CONTENT BASED.
+  It will never cut the Contact Us button.
+  */
+
+  min-height: 700px;
+  padding: 140px 0 80px;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: visible;
 }
 
-h1,h2,h3,h4,h5,h6{
 
-    font-family:'Poppins',sans-serif;
-    color:var(--primary);
-}
+/* =========================================================
+   HERO OVERLAY
+========================================================= */
 
-/*==================================================
-                BUTTONS
-==================================================*/
+.about-hero .hero-overlay {
+  position: absolute;
 
-.primary-btn,
-.secondary-btn{
+  inset: 0;
 
-    padding:14px 34px;
+  z-index: 0;
 
-    border-radius:50px;
-
-    transition:var(--transition);
-
-    font-weight:600;
-}
-
-.primary-btn{
-
-    background:var(--accent)!important;
-
-    color:#fff!important;
-
-    border:none!important;
-}
-
-.primary-btn:hover{
-
-    background:var(--accent-dark)!important;
-
-    transform:translateY(-4px);
-}
-
-.secondary-btn{
-
-    background:transparent!important;
-
-    color:#fff!important;
-
-    border:2px solid #fff!important;
-}
-
-.secondary-btn:hover{
-
-    background:#fff!important;
-
-    color:var(--primary)!important;
-}
-
-/*==================================================
-                HERO
-==================================================*/
-
-.about-hero{
-
-    position:relative;
-
-    min-height:100vh;
-
-    display:flex;
-
-    align-items:center;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    background-size:cover;
-
-    overflow:hidden;
-}
-
-/* Overlay */
-
-.hero-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    background:
+  background:
     linear-gradient(
-    90deg,
-    rgba(3,20,54,.92),
-    rgba(3,20,54,.72),
-    rgba(3,20,54,.35),
-    transparent);
+      90deg,
+      rgba(3, 20, 54, 0.97) 0%,
+      rgba(3, 20, 54, 0.90) 35%,
+      rgba(3, 20, 54, 0.65) 65%,
+      rgba(3, 20, 54, 0.35) 100%
+    );
 }
 
-/* Container */
 
-.hero-container{
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
 
-    position:relative;
+.about-hero .hero-container {
+  position: relative;
 
-    z-index:2;
+  z-index: 2;
 
-    width:100%;
+  width: 100%;
+
+  margin: 0 auto;
 }
 
-/* Glass Card */
 
-.hero-card{
+/* =========================================================
+   HERO CARD
+========================================================= */
 
-    width:min(55%,720px);
+.about-hero .hero-card {
+  position: relative;
 
-    padding:clamp(2rem,4vw,4rem);
+  z-index: 3;
 
-    border-radius:var(--radius-lg);
+  width: 100%;
 
-    background:rgba(255,255,255,.10);
+  max-width: 720px;
 
-    backdrop-filter:blur(18px);
+  /*
+  NEVER FIX THE HEIGHT
+  */
 
-    border:1px solid rgba(255,255,255,.18);
+  height: auto;
 
-    color:#fff;
+  min-height: 0;
 
-    box-shadow:var(--shadow-lg);
+  padding: clamp(30px, 4vw, 60px);
 
-    transition:var(--transition);
+  margin: 0;
 
-    animation:heroFade .8s ease;
+  display: block;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  color: #ffffff;
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: var(--shadow-lg);
+
+  overflow: visible;
+
+  animation: heroFade 0.7s ease;
 }
 
-.hero-card:hover{
 
-    transform:translateY(-8px);
+/* =========================================================
+   HERO TAG
+========================================================= */
+
+.about-hero .hero-tag {
+  display: inline-block;
+
+  margin: 0 0 20px;
+
+  padding: 9px 18px;
+
+  border-radius: 50px;
+
+  background: var(--accent);
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
 }
 
-/* Tag */
 
-.hero-tag{
+/* =========================================================
+   HERO HEADING
+========================================================= */
 
-    display:inline-block;
+.about-hero .hero-card h1 {
+  margin: 0 0 22px;
 
-    margin-bottom:22px;
+  color: #ffffff;
 
-    padding:10px 20px;
+  font-family: "Poppins", sans-serif;
 
-    border-radius:50px;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
 
-    background:var(--accent);
+  font-weight: 800;
 
-    color:#fff;
+  line-height: 1.08;
 
-    text-transform:uppercase;
-
-    font-size:.9rem;
-
-    letter-spacing:1px;
-
-    font-weight:600;
+  word-wrap: break-word;
 }
 
-/* Heading */
 
-.hero-card h1{
+/* =========================================================
+   HERO PARAGRAPHS
+========================================================= */
 
-    color:#fff;
+.about-hero .hero-card p {
+  margin: 0 0 16px;
 
-    font-size:clamp(2.5rem,5vw,4.8rem);
+  color: #e2e8f0;
 
-    line-height:1.1;
+  font-family: "Inter", sans-serif;
 
-    font-weight:800;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem);
 
-    margin-bottom:24px;
+  line-height: 1.75;
 }
 
-/* Subtitle */
-
-.hero-subtitle{
-
-    color:#F8FAFC;
-
-    font-size:clamp(1rem,1.5vw,1.15rem);
-
-    line-height:1.9;
-
-    margin-bottom:20px;
+.about-hero .hero-card p:last-of-type {
+  margin-bottom: 0;
 }
 
-/* Paragraph */
 
-.hero-card p{
+/* =========================================================
+   HERO BUTTON WRAPPER
+========================================================= */
 
-    color:#E2E8F0;
+.about-hero .hero-buttons {
+  position: relative;
 
-    line-height:1.9;
+  z-index: 10;
 
-    font-size:clamp(.95rem,1.2vw,1.05rem);
+  width: 100%;
+
+  margin-top: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  /*
+  IMPORTANT:
+  Buttons stay inside normal document flow.
+  */
+
+  height: auto;
+
+  min-height: 48px;
 }
 
-/* Buttons */
 
-.hero-buttons{
+/* =========================================================
+   ALL HERO BUTTONS
+========================================================= */
 
-    display:flex;
+.about-hero .hero-buttons .primary-btn,
+.about-hero .hero-buttons .secondary-btn {
+  position: relative;
 
-    gap:18px;
+  display: inline-flex;
 
-    flex-wrap:wrap;
+  align-items: center;
 
-    margin-top:35px;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: auto;
+
+  min-width: 120px;
+
+  min-height: 48px;
+
+  padding: 11px 24px;
+
+  margin: 0;
+
+  border-radius: 50px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  transition: var(--transition);
 }
 
-/*==================================================
-                ANIMATION
-==================================================*/
 
-@keyframes heroFade{
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
 
-    from{
+.about-hero .primary-btn {
+  background: var(--accent) !important;
 
-        opacity:0;
+  border: 2px solid var(--accent) !important;
 
-        transform:translateY(40px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-    }
-}
-/*==================================================
-        MISSION • VISION • VALUES
-==================================================*/
-
-.mission-section{
-    background:var(--bg);
+  color: #ffffff !important;
 }
 
-.mission-card{
-    background:var(--white);
-    height:100%;
-    padding:2.5rem 2rem;
-    border-radius:var(--radius-lg);
-    text-align:center;
-    box-shadow:var(--shadow-sm);
-    transition:var(--transition);
+.about-hero .primary-btn:hover {
+  background: var(--accent-dark) !important;
+
+  border-color: var(--accent-dark) !important;
+
+  transform: translateY(-3px);
 }
 
-.mission-card:hover{
-    transform:translateY(-10px);
-    box-shadow:var(--shadow-md);
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.about-hero .secondary-btn {
+  background: transparent !important;
+
+  border: 2px solid #ffffff !important;
+
+  color: #ffffff !important;
 }
 
-.mission-icon{
-    width:80px;
-    aspect-ratio:1;
-    margin:0 auto 1.5rem;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    color:#fff;
-    font-size:2rem;
-    transition:var(--transition);
+.about-hero .secondary-btn:hover {
+  background: #ffffff !important;
+
+  border-color: #ffffff !important;
+
+  color: var(--primary) !important;
+
+  transform: translateY(-3px);
 }
 
-.mission-card:hover .mission-icon{
-    transform:scale(1.1) rotate(6deg);
+
+/* =========================================================
+   HERO ANIMATION
+========================================================= */
+
+@keyframes heroFade {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
 }
 
-.red{background:var(--accent);}
-.blue{background:var(--primary);}
-.green{background:#198754;}
 
-.mission-card h3{
-    font-size:clamp(1.5rem,2vw,1.8rem);
-    margin-bottom:1rem;
-    font-weight:700;
+/* =========================================================
+   TABLET
+   992px AND BELOW
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .about-hero {
+    min-height: auto;
+
+    padding: 120px 0 70px;
+
+    align-items: flex-start;
+  }
+
+  .about-hero .hero-card {
+    max-width: 700px;
+
+    padding: 40px;
+  }
+
+  .about-hero .hero-card h1 {
+    font-size: clamp(2.3rem, 6vw, 3.8rem);
+  }
+
 }
 
-.mission-card p{
-    line-height:1.8;
-    margin:0;
+
+/* =========================================================
+   MOBILE TABLET
+   768px AND BELOW
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .about-hero {
+    min-height: auto;
+
+    padding: 110px 0 50px;
+
+    align-items: flex-start;
+  }
+
+  .about-hero .hero-card {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 30px 24px;
+
+    border-radius: 22px;
+  }
+
+  .about-hero .hero-card h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+
+    line-height: 1.1;
+  }
+
+  .about-hero .hero-card p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  /* BUTTONS STACK */
+
+  .about-hero .hero-buttons {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    justify-content: flex-start;
+
+    gap: 10px;
+  }
+
+  .about-hero .hero-buttons .primary-btn,
+  .about-hero .hero-buttons .secondary-btn {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
+    flex: none;
+  }
+
 }
 
-.values-list{
-    list-style:none;
-    padding:0;
-    margin:0;
-    text-align:left;
+
+/* =========================================================
+   SMALL MOBILE
+   576px AND BELOW
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .about-hero {
+    padding: 100px 0 40px;
+  }
+
+  .about-hero .hero-card {
+    padding: 25px 18px;
+
+    border-radius: 20px;
+  }
+
+  .about-hero .hero-tag {
+    margin-bottom: 16px;
+
+    padding: 7px 14px;
+
+    font-size: 11px;
+  }
+
+  .about-hero .hero-card h1 {
+    margin-bottom: 18px;
+
+    font-size: 32px;
+
+    line-height: 1.12;
+  }
+
+  .about-hero .hero-card p {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .about-hero .hero-buttons {
+    margin-top: 22px;
+  }
+
 }
 
-.values-list li{
-    position:relative;
-    padding-left:1.5rem;
-    margin-bottom:1rem;
-    line-height:1.8;
+
+/* =========================================================
+   VERY SMALL MOBILE
+   400px AND BELOW
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-hero {
+    padding: 90px 0 35px;
+  }
+
+  .about-hero .hero-card {
+    padding: 22px 15px;
+  }
+
+  .about-hero .hero-card h1 {
+    font-size: 28px;
+  }
+
+  .about-hero .hero-card p {
+    font-size: 12px;
+  }
+
+  .about-hero .hero-buttons .primary-btn,
+  .about-hero .hero-buttons .secondary-btn {
+    min-height: 46px;
+
+    font-size: 13px;
+  }
+
 }
 
-.values-list li:last-child{
-    margin-bottom:0;
+
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .about-hero {
+    min-height: 800px;
+
+    padding-top: 160px;
+
+    padding-bottom: 100px;
+  }
+
+  .about-hero .hero-card {
+    max-width: 760px;
+
+    padding: 60px;
+  }
+
 }
 
-.values-list li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:.75rem;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--accent);
+
+/* =========================================================
+   4K SCREENS
+   2000px+
+========================================================= */
+
+@media (min-width: 2000px) {
+
+  .about-hero {
+    min-height: 950px;
+
+    padding-top: 190px;
+
+    padding-bottom: 120px;
+  }
+
+  .about-hero .hero-card {
+    max-width: 850px;
+
+    padding: 70px;
+  }
+
+  .about-hero .hero-card h1 {
+    font-size: 5.2rem;
+  }
+
+  .about-hero .hero-card p {
+    font-size: 1.2rem;
+
+    line-height: 1.9;
+  }
+
 }
 
-/*==================================================
-                SECTION TITLE
-==================================================*/
+/* =========================================================
+   MISSION / VISION / VALUES
+========================================================= */
 
-.section-title{
-    text-align:center;
-    margin-bottom:4rem;
-     margin-bottom:2rem;
+.mission-card {
+  height: 100%;
+
+  padding: clamp(1.8rem, 3vw, 2.5rem);
+
+  background: var(--white);
+
+  border-radius: var(--radius-lg);
+
+  text-align: center;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
 }
 
-.section-title h2{
-    font-size:clamp(2rem,3vw,2.8rem);
-    margin-bottom:.5rem;
-    font-weight:700;
+.mission-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: var(--shadow-md);
 }
 
-.section-title p{
-    width:min(90%,700px);
-    margin:auto;
-    line-height:1.8;
+
+/* =========================================================
+   MISSION ICON
+========================================================= */
+
+.mission-icon {
+  width: clamp(65px, 6vw, 80px);
+
+  aspect-ratio: 1;
+
+  margin: 0 auto 1.5rem;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  font-size: clamp(1.5rem, 2vw, 2rem);
+
+  transition: var(--transition);
 }
 
-.title-line{
-    width:90px;
-    height:4px;
-    background:var(--accent);
-    margin:0 auto 1.3rem;
-    border-radius:50px;
+.mission-card:hover .mission-icon {
+  transform: scale(1.08) rotate(5deg);
 }
 
-/*==================================================
-                OUR JOURNEY
-==================================================*/
 
-.journey-section{
-    background:var(--white);
+/* =========================================================
+   ICON COLORS
+========================================================= */
+
+.red {
+  background: var(--accent);
 }
 
-.timeline{
-    position:relative;
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:2%;
+.blue {
+  background: var(--primary);
 }
 
-.timeline::before{
-    content:"";
-    position:absolute;
-    top:38px;
-    left:8%;
-    right:8%;
-    height:4px;
-    background:var(--primary);
-    z-index:1;
+.green {
+  background: var(--green);
 }
 
-.timeline-item{
-    width:18%;
-    position:relative;
-    z-index:2;
-    text-align:center;
+
+/* =========================================================
+   MISSION TEXT
+========================================================= */
+
+.mission-card h3 {
+  margin-bottom: 1rem;
+
+  color: var(--heading);
+
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+
+  font-weight: 700;
 }
 
-.timeline-icon{
-    width:75px;
-    aspect-ratio:1;
-    margin:auto;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    background:var(--primary);
-    color:#fff;
-    font-size:1.9rem;
-    transition:var(--transition);
+.mission-card p {
+  margin: 0;
+
+  color: var(--text);
+
+  line-height: 1.8;
 }
 
-.timeline-item:hover .timeline-icon{
-    background:var(--accent);
-    transform:translateY(-8px) scale(1.08);
+
+/* =========================================================
+   VALUES LIST
+========================================================= */
+
+.values-list {
+  max-width: 260px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  list-style: none;
+
+  text-align: left;
 }
 
-.timeline-year{
-    display:block;
-    margin:1rem 0 .6rem;
-    color:var(--accent);
-    font-weight:700;
-    font-size:1.25rem;
+.values-list li {
+  position: relative;
+
+  padding-left: 1.5rem;
+
+  margin-bottom: 0.8rem;
+
+  color: var(--text);
 }
 
-.timeline-item h5{
-    font-size:1.35rem;
-    margin-bottom:.1rem;
-    font-weight:600;
+.values-list li:last-child {
+  margin-bottom: 0;
 }
 
-.timeline-item p{
-    line-height:1.8;
-    margin:0;
+.values-list li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0.7rem;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
 }
 
-/*==================================================
-            COMMON CARD HOVER
-==================================================*/
 
-.mission-card,
-.timeline-icon{
-    will-change:transform;
-}
-/*==================================================
-                OUR STORY
-==================================================*/
+/* =========================================================
+   SECTION TITLES
+========================================================= */
 
-.story-section{
-    background:var(--bg);
+.section-title {
+  max-width: 750px;
+
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem);
+
+  text-align: center;
 }
+
+.section-title h2 {
+  margin-bottom: 0.6rem;
+
+  color: var(--primary);
+
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+
+  font-weight: 700;
+}
+
+.title-line {
+  width: 80px;
+
+  height: 4px;
+
+  margin: 0 auto 1.2rem;
+
+  border-radius: 50px;
+
+  background: var(--accent);
+}
+
+.section-title p {
+  max-width: 700px;
+
+  margin: auto;
+
+  color: var(--text);
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   JOURNEY TIMELINE - DESKTOP
+========================================================= */
+
+.timeline {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 1.5rem;
+
+  width: 100%;
+}
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+
+  top: 35px;
+
+  left: 10%;
+
+  right: 10%;
+
+  height: 4px;
+
+  background: var(--primary);
+
+  z-index: 0;
+}
+
+.timeline-item {
+  position: relative;
+
+  z-index: 1;
+
+  min-width: 0;
+
+  text-align: center;
+}
+
+.timeline-icon {
+  width: clamp(60px, 6vw, 75px);
+
+  aspect-ratio: 1;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+
+  transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-icon {
+  background: var(--accent);
+
+  transform: translateY(-7px) scale(1.08);
+}
+
+.timeline-year {
+  display: block;
+
+  margin: 1rem 0 0.5rem;
+
+  color: var(--accent);
+
+  font-size: 1.15rem;
+
+  font-weight: 700;
+}
+
+.timeline-item h5 {
+  margin-bottom: 0.5rem;
+
+  color: var(--primary);
+
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+
+  font-weight: 600;
+}
+
+.timeline-item p {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   STORY SECTION
+========================================================= */
 
 .story-content,
-.achievement-card{
-    background:var(--white);
-    height:100%;
-    padding:clamp(1.5rem,3vw,3rem);
-    border-radius:var(--radius-lg);
-    box-shadow:var(--shadow-sm);
-    transition:var(--transition);
+.achievement-card {
+  height: 100%;
+
+  padding: clamp(1.5rem, 3vw, 3rem);
+
+  background: var(--white);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
 }
 
 .story-content:hover,
-.achievement-card:hover{
-    transform:translateY(-8px);
-    box-shadow:var(--shadow-md);
+.achievement-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: var(--shadow-md);
 }
 
-/* Story Tag */
 
-.story-tag{
-    display:inline-block;
-    padding:.55rem 1.2rem;
-    margin-bottom:1.3rem;
-    border-radius:50px;
-    background:rgba(229,57,53,.1);
-    color:var(--accent);
-    font-size:.85rem;
-    font-weight:600;
+/* =========================================================
+   STORY TAG
+========================================================= */
+
+.story-tag {
+  display: inline-block;
+
+  margin-bottom: 1.2rem;
+
+  padding: 0.5rem 1.1rem;
+
+  border-radius: 50px;
+
+  background: rgba(229, 57, 53, 0.1);
+
+  color: var(--accent);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
 }
 
-/* Story Heading */
 
-.story-content h3{
-    font-size:clamp(2rem,3vw,2.5rem);
-    line-height:1.3;
-    margin-bottom:1.4rem;
-    font-weight:700;
+/* =========================================================
+   STORY HEADING
+========================================================= */
+
+.story-content h3 {
+  margin-bottom: 1.3rem;
+
+  color: var(--primary);
+
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+
+  line-height: 1.3;
 }
 
-.story-content h3 span{
-    color:var(--accent);
+.story-content h3 span {
+  color: var(--accent);
 }
 
-.story-content p{
-    margin-bottom:1rem;
-    line-height:1.9;
+
+/* =========================================================
+   STORY TEXT
+========================================================= */
+
+.story-content p {
+  margin-bottom: 1rem;
+
+  color: var(--text);
+
+  line-height: 1.8;
 }
 
-/* Quote */
 
-.story-quote{
-    position:relative;
-    margin-top:2rem;
-    padding:1.5rem;
-    border-left:5px solid var(--accent);
-    border-radius:18px;
-    background:#FFF5F5;
+/* =========================================================
+   STORY QUOTE
+========================================================= */
+
+.story-quote {
+  position: relative;
+
+  margin-top: 1.8rem;
+
+  padding: 1.3rem 1.5rem;
+
+  border-left: 5px solid var(--accent);
+
+  border-radius: 0 18px 18px 0;
+
+  background: #fff5f5;
 }
 
-.story-quote p{
-    margin:0;
-    font-style:italic;
+.story-quote p {
+  margin: 0;
+
+  font-style: italic;
 }
 
-.story-quote i{
-    position:absolute;
-    top:18px;
-    right:18px;
-    font-size:2rem;
-    color:rgba(229,57,53,.25);
+.story-quote i {
+  position: absolute;
+
+  top: 10px;
+
+  right: 15px;
+
+  color: rgba(229, 57, 53, 0.25);
+
+  font-size: 2rem;
 }
 
-/*==================================================
-                ACHIEVEMENTS
-==================================================*/
 
-.achievement-head{
-    display:flex;
-    align-items:center;
-    gap:1rem;
-    margin-bottom:2rem;
+/* =========================================================
+   ACHIEVEMENT HEADER
+========================================================= */
+
+.achievement-head {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
 }
 
-.achievement-icon,
-.achievement-circle{
+.achievement-icon {
+  width: 65px;
 
-    display:grid;
-    place-items:center;
+  aspect-ratio: 1;
 
-    color:#fff;
+  flex-shrink: 0;
 
-    border-radius:50%;
+  display: grid;
 
-    flex-shrink:0;
+  place-items: center;
 
-    transition:var(--transition);
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  font-size: 1.7rem;
 }
 
-/* Main Icon */
+.achievement-head h4 {
+  margin-bottom: 0.2rem;
 
-.achievement-icon{
+  color: var(--primary);
 
-    width:70px;
-    aspect-ratio:1;
-
-    background:var(--accent);
-
-    font-size:1.8rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
 }
 
-.achievement-head h4{
+.achievement-head span {
+  color: #777;
 
-    font-size:clamp(1.6rem,2vw,2rem);
-
-    margin-bottom:.3rem;
-
-    font-weight:700;
+  font-size: 0.9rem;
 }
 
-.achievement-head span{
 
-    color:#777;
+/* =========================================================
+   ACHIEVEMENT ITEMS
+========================================================= */
+
+.achievement-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  padding: 1.2rem 0;
+
+  border-bottom: 1px solid #eee;
 }
 
-/* Achievement Items */
+.achievement-item:last-child {
+  padding-bottom: 0;
 
-.achievement-item{
-
-    display:flex;
-
-    gap:1rem;
-
-    padding:1.3rem 0;
-
-    border-bottom:1px solid #eee;
+  border-bottom: none;
 }
 
-.achievement-item:last-child{
 
-    border:none;
+/* =========================================================
+   ACHIEVEMENT CIRCLE
+========================================================= */
 
-    padding-bottom:0;
+.achievement-circle {
+  width: 52px;
+
+  aspect-ratio: 1;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  color: #fff;
+
+  font-size: 1.25rem;
+
+  transition: var(--transition);
 }
 
-/* Circle */
-
-.achievement-circle{
-
-    width:55px;
-
-    aspect-ratio:1;
-
-    background:var(--primary);
-
-    font-size:1.4rem;
+.achievement-circle.red {
+  background: var(--accent);
 }
 
-.achievement-circle.red{
-    background:var(--accent);
+.achievement-circle.green {
+  background: var(--green);
 }
 
-.achievement-circle.green{
-    background:#198754;
+.achievement-circle.blue {
+  background: var(--primary);
 }
 
-.achievement-circle.blue{
-    background:var(--primary);
+.achievement-item:hover .achievement-circle {
+  transform: scale(1.08) rotate(8deg);
 }
 
-/* Text */
 
-.achievement-item h5{
+/* =========================================================
+   ACHIEVEMENT TEXT
+========================================================= */
 
-    margin-bottom:.45rem;
+.achievement-item h5 {
+  margin-bottom: 0.3rem;
 
-    font-size:1.2rem;
+  color: var(--primary);
 
-    font-weight:600;
+  font-size: 1.1rem;
 }
 
-.achievement-item p{
+.achievement-item p {
+  margin: 0;
 
-    margin:0;
+  color: var(--text);
 
-    line-height:1.7;
+  font-size: 0.92rem;
+
+  line-height: 1.7;
 }
 
-/* Hover */
 
-.achievement-item:hover .achievement-circle{
+/* =========================================================
+   LARGE DESKTOP
+   1200px+
+========================================================= */
 
-    transform:rotate(10deg) scale(1.1);
-}
+@media (min-width: 1200px) {
 
-/*==================================================
-            COMMON UTILITIES
-==================================================*/
+  .about-hero {
+    padding-top: 140px;
 
-.story-content,
-.achievement-card,
-.mission-card{
+    padding-bottom: 80px;
+  }
 
-    will-change:transform;
-}
-
-.story-content p,
-.mission-card p,
-.timeline-item p,
-.achievement-item p{
-
-    color:var(--text);
-}
-/*==================================================
-            RESPONSIVE DESIGN
-==================================================*/
-
-/*======================
-        1200px
-=======================*/
-@media (max-width:1200px){
-
-    section{
-        padding:5rem 0;
-    }
-
-    .hero-card{
-        width:min(70%,650px);
-    }
-
-    .timeline-item{
-        width:19%;
-    }
-
-    .story-content,
-    .achievement-card,
-    .mission-card{
-        padding:2rem;
-    }
-
-}
-
-/*======================
-        992px
-=======================*/
-@media (max-width:992px){
-
-    section{
-        padding:4.5rem 0;
-    }
-
-    /* Hero */
-
-    .about-hero{
-        min-height:auto;
-        padding:7rem 0;
-    }
-
-    .hero-overlay{
-        background:rgba(3,20,54,.75);
-    }
-
-    .hero-card{
-        width:85%;
-    }
-
-    /* Cards */
-
-    .mission-card,
-    .story-content{
-        margin-bottom:2rem;
-    }
-
-    /* Timeline */
-
-    .timeline{
-        display:block;
-    }
-
-    .timeline::before{
-        display:none;
-    }
-
-    .timeline-item{
-        width:100%;
-        text-align:left;
-        padding-left:5rem;
-        margin-bottom:3rem;
-    }
-
-    .timeline-item:last-child{
-        margin-bottom:0;
-    }
-
-    .timeline-item::before{
-        content:"";
-        position:absolute;
-        left:35px;
-        top:0;
-        bottom:-48px;
-        width:3px;
-        background:var(--primary);
-    }
-
-    .timeline-item:last-child::before{
-        display:none;
-    }
-
-    .timeline-icon{
-        position:absolute;
-        left:0;
-        top:0;
-        width:60px;
-        height:60px;
-        font-size:1.5rem;
-    }
+  .hero-card {
+    max-width: 720px;
+  }
 
 }
 
-/*======================
-        768px
-=======================*/
-@media (max-width:768px){
 
-    section{
-        padding:4rem 0;
-    }
+/* =========================================================
+   EXTRA LARGE DESKTOP
+   1400px+
+========================================================= */
 
-    /* Hero */
+@media (min-width: 1400px) {
 
-    .about-hero{
-        justify-content:center;
-        text-align:center;
-        padding:6rem 0;
-    }
+  .about-hero {
+    padding-top: 150px;
 
-    .hero-card{
-        width:100%;
-    }
+    padding-bottom: 90px;
+  }
 
-    .hero-buttons{
-        justify-content:center;
-    }
+  .hero-card {
+    max-width: 760px;
+  }
 
-    /* Mission */
-
-    .mission-card{
-        padding:1.8rem;
-    }
-
-    .mission-icon{
-        width:70px;
-        height:70px;
-        font-size:1.8rem;
-    }
-
-    /* Story */
-
-    .story-content,
-    .achievement-card{
-        padding:2rem;
-    }
-
-    .story-content h3{
-        font-size:2rem;
-    }
-
-    /* Achievement */
-
-    .achievement-head{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .achievement-icon{
-        margin-bottom:1rem;
-    }
-
-    /* Timeline */
-
-    .timeline-item{
-        padding-left:4.5rem;
-    }
-
-    .timeline-icon{
-        width:55px;
-        height:55px;
-        font-size:1.3rem;
-    }
+  .timeline {
+    gap: 2rem;
+  }
 
 }
 
-/*======================
-        576px
-=======================*/
-@media (max-width:576px){
 
-    section{
-        padding:3.5rem 0;
-    }
+/* =========================================================
+   4K / ULTRA WIDE
+   2000px+
+========================================================= */
 
-    /* Hero */
+@media (min-width: 2000px) {
 
-    .hero-card{
-        padding:2rem 1.5rem;
-        border-radius:20px;
-    }
+  .about-hero {
+    min-height: 900px;
 
-    .hero-card h1{
-        font-size:2rem;
-    }
+    padding-top: 180px;
 
-    .hero-buttons{
-        flex-direction:column;
-    }
+    padding-bottom: 100px;
+  }
 
-    .primary-btn,
-    .secondary-btn{
-        width:100%;
-    }
+  .hero-card {
+    max-width: 850px;
 
-    /* Mission */
+    padding: 4.5rem;
+  }
 
-    .mission-card{
-        padding:1.5rem;
-    }
+  .hero-card h1 {
+    font-size: 5rem;
+  }
 
-    .mission-icon{
-        width:65px;
-        height:65px;
-        font-size:1.6rem;
-    }
+  .hero-card p {
+    font-size: 1.2rem;
 
-    /* Story */
+    line-height: 1.9;
+  }
 
-    .story-content,
-    .achievement-card{
-        padding:1.5rem;
-    }
-
-    .story-content h3{
-        font-size:1.7rem;
-    }
-
-    .story-quote{
-        padding:1.2rem;
-    }
-
-    /* Achievement */
-
-    .achievement-item{
-        gap:.8rem;
-    }
-
-    .achievement-circle{
-        width:48px;
-        height:48px;
-        font-size:1.2rem;
-    }
-
-    /* Timeline */
-
-    .timeline-item{
-        padding-left:4rem;
-    }
-
-    .timeline-icon{
-        width:50px;
-        height:50px;
-        font-size:1.2rem;
-    }
+  .mission-card,
+  .story-content,
+  .achievement-card {
+    padding: 3.5rem;
+  }
 
 }
 
-/*======================
-        400px
-=======================*/
-@media (max-width:400px){
 
-    section{
-        padding:3rem 0;
-    }
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   768px - 1199px
+========================================================= */
 
-    .hero-card{
-        padding:1.5rem 1.2rem;
-    }
+@media (max-width: 1199px) {
 
-    .hero-card h1{
-        font-size:1.8rem;
-    }
+  .hero-card {
+    max-width: 650px;
+  }
 
-    .hero-tag{
-        font-size:.75rem;
-        padding:.45rem 1rem;
-    }
+  .timeline {
+    gap: 1rem;
+  }
 
-    .hero-card p,
-    .hero-subtitle,
-    .mission-card p,
-    .story-content p,
-    .timeline-item p,
-    .achievement-item p{
-        font-size:.9rem;
-    }
+  .timeline-item p {
+    font-size: 0.9rem;
+  }
 
-    .section-title h2{
-        font-size:1.8rem;
-    }
+}
 
-    .story-content h3{
-        font-size:1.5rem;
-    }
 
-    .timeline-item{
-        padding-left:3.5rem;
-    }
+/* =========================================================
+   TABLET
+   768px - 991px
+========================================================= */
 
-    .timeline-icon{
-        width:45px;
-        height:45px;
-        font-size:1rem;
-    }
+@media (max-width: 991px) {
 
-    .achievement-circle{
-        width:42px;
-        height:42px;
-        font-size:1rem;
-    }
+  /*
+    Hero automatically expands based on content.
+    No fixed height.
+  */
+
+  .about-hero {
+    min-height: auto;
+
+    padding: 130px 0 70px;
+
+    align-items: center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 20, 54, 0.92),
+        rgba(3, 20, 54, 0.72)
+      );
+  }
+
+  .hero-card {
+    width: 100%;
+
+    max-width: 700px;
+  }
+
+
+  /* ================================================
+     TIMELINE BECOMES VERTICAL
+  ================================================ */
+
+  .timeline {
+    display: block;
+
+    max-width: 750px;
+
+    margin: auto;
+  }
+
+  .timeline::before {
+    top: 0;
+
+    bottom: 0;
+
+    left: 30px;
+
+    right: auto;
+
+    width: 3px;
+
+    height: auto;
+  }
+
+  .timeline-item {
+    min-height: 90px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1.5rem;
+
+    margin-bottom: 2.5rem;
+
+    text-align: left;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-icon {
+    width: 60px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+
+    z-index: 2;
+  }
+
+  .timeline-content {
+    padding-top: 0.2rem;
+  }
+
+  .timeline-year {
+    margin: 0 0 0.3rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   576px - 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .about-hero {
+    min-height: auto;
+
+    padding: 110px 0 50px;
+
+    align-items: flex-start;
+  }
+
+  .hero-card {
+    max-width: 100%;
+
+    padding: 2rem 1.5rem;
+
+    border-radius: 22px;
+  }
+
+  .hero-card h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+
+    line-height: 1.1;
+  }
+
+  .hero-card p {
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+  }
+
+
+  /* Buttons stack */
+
+  .hero-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+
+    gap: 0.8rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+
+    min-height: 48px;
+  }
+
+
+  /* Story */
+
+  .story-content,
+  .achievement-card {
+    padding: 2rem;
+  }
+
+
+  /* Achievement */
+
+  .achievement-head {
+    align-items: center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   575px and below
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .about-hero {
+    min-height: auto;
+
+    padding: 100px 0 40px;
+  }
+
+  .hero-card {
+    padding: 1.5rem 1.2rem;
+
+    border-radius: 18px;
+  }
+
+  .hero-tag {
+    margin-bottom: 1rem;
+
+    padding: 0.45rem 1rem;
+
+    font-size: 0.7rem;
+  }
+
+  .hero-card h1 {
+    font-size: 1.9rem;
+
+    line-height: 1.12;
+
+    margin-bottom: 1rem;
+  }
+
+  .hero-card p {
+    font-size: 0.86rem;
+
+    line-height: 1.65;
+  }
+
+  .hero-buttons {
+    margin-top: 1.5rem;
+  }
+
+
+  /* Mission */
+
+  .mission-card {
+    padding: 1.5rem;
+  }
+
+  .mission-icon {
+    width: 65px;
+  }
+
+
+  /* Timeline */
+
+  .timeline-item {
+    gap: 1rem;
+  }
+
+  .timeline-icon {
+    width: 50px;
+  }
+
+  .timeline::before {
+    left: 24px;
+  }
+
+  .timeline-item h5 {
+    font-size: 1.05rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.88rem;
+  }
+
+
+  /* Story */
+
+  .story-content,
+  .achievement-card {
+    padding: 1.5rem;
+  }
+
+  .story-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .story-content p {
+    font-size: 0.9rem;
+  }
+
+
+  /* Achievements */
+
+  .achievement-head {
+    align-items: flex-start;
+  }
+
+  .achievement-icon {
+    width: 55px;
+  }
+
+  .achievement-item {
+    gap: 0.7rem;
+  }
+
+  .achievement-circle {
+    width: 45px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   400px and below
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .about-hero {
+    padding: 90px 0 35px;
+  }
+
+  .hero-card {
+    padding: 1.3rem 1rem;
+  }
+
+  .hero-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-card p {
+    font-size: 0.82rem;
+  }
+
+  .hero-tag {
+    font-size: 0.65rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 0.85rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.7rem;
+  }
+
+  .section-title p {
+    font-size: 0.88rem;
+  }
+
+  .timeline-item {
+    gap: 0.8rem;
+  }
+
+  .timeline-icon {
+    width: 45px;
+  }
+
+  .timeline::before {
+    left: 21px;
+  }
+
+  .achievement-item h5 {
+    font-size: 1rem;
+  }
+
+  .achievement-item p {
+    font-size: 0.85rem;
+  }
 
 }

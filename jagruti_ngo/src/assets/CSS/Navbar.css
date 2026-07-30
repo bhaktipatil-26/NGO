@@ -7,16 +7,18 @@
 .navbar.custom-navbar{
     position: absolute;
     z-index: 1000;
-    top: 5px;
-    left: 50%;
-    transform: translate(-50%);
-    width:1600px;
-    /* height:90px; */
+
+    top:25px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(92%,1317px) !important;   /* THIS is the important part */
+
     padding:12px 14px;
     border-radius:17px;
-    background:#FFFFFF;
-    margin:25px auto 0;
-    box-shadow:0px 8px 20px rgba(0,0,0,.08);
+    background:#fff;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 .navbar-collapse{
     background: #fff;
@@ -160,10 +162,54 @@ button.donate-btn{
 {
     display: none;
 }
+/* ===================== */
+/* Language Dropdown */
+/* ===================== */
+
+.language-toggle::after{
+    display:none !important;
+}
+
+.language-toggle{
+    color:#040E3B !important;
+    text-decoration:none !important;
+}
+
+.language-toggle:hover{
+    color:#D61114 !important;
+}
+
+.language-menu{
+    min-width:170px;
+    border:none;
+    border-radius:12px;
+    padding:8px 0;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.language-menu .dropdown-item{
+    font-family:'Poppins';
+    font-size:14px;
+    padding:10px 18px;
+    transition:.2s;
+}
+
+.language-menu .dropdown-item:hover{
+    background:#D61114;
+    color:#fff;
+}
+
+.language-menu .dropdown-item:active{
+    background:#b90c0f;
+}
 @media (min-width:320px) and (max-width:426px)
 {
+    .globe-icon
+    {
+        width: 25px;
+    }
     /* for  with underline but no seperator and also with no underline but seperator*/
-    .navbar.custom-navbar{
+    /* .navbar.custom-navbar{
     position: absolute;
     z-index: 1000;
     top: 0px;
@@ -172,7 +218,26 @@ button.donate-btn{
     width:100%;
     height:90px;
     margin-top: 0px;
+} */
+ .language-menu{
+    min-width:150px;
 }
+
+.language-menu .dropdown-item{
+    font-size:13px;
+}
+ .navbar.custom-navbar{
+
+        width:95%;
+
+        left:50%;
+        transform:translateX(-50%);
+
+        top:10px;
+        margin:0;
+
+        border-radius:15px;
+    }
     .nav-links
     {
         gap: 15px;
@@ -239,15 +304,13 @@ button.donate-btn{
 .nav-links .nav-link:hover::after{
     transform:scaleX(1);
 }
-    .navbar.custom-navbar
-    {
-        position:relative;
-        top:0;
-        left:0;
-        transform:translate(0);
-        width:100%;
-        margin-top: 0px;
-    }
+.navbar.custom-navbar{
+    position:absolute;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(94%,1317px);
+}
     .nav-links
     {
         gap: 15px;
@@ -290,3 +353,42 @@ button.donate-btn{
 
     }
 }
+
+    @media (min-width:1200px) and (max-width:1400px){
+
+    .nav-links{
+        gap:14px;
+    }
+
+    .nav-links .nav-link{
+        font-size:11px;
+        white-space: nowrap;
+    }
+
+    .brand-text h5{
+        font-size:15px;
+    }
+
+    .brand-text p{
+        font-size:12px;
+    }
+
+    button.donate-btn{
+        font-size:13px;
+        padding:8px 12px;
+    }
+
+    .globe-icon{
+        font-size:26px;
+    }
+    .brand-logo{
+    width:60px;
+    height:60px;
+}
+/* .navbar.custom-navbar
+{
+    width: auto;
+
+} */
+
+    }
